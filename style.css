@@ -1,0 +1,190 @@
+/* RTL and Localization Support */
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+:root {
+  --intel-blue: #0071c5;
+  --intel-blue-dark: #005a99;
+  --intel-light: #f8f9fa;
+  --intel-contrast: #fff;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, var(--intel-blue) 0%, var(--intel-light) 100%);
+  color: #1a1a1a;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+section, .three-col-section, .card, .navbar, .footer {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: 400;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+header img {
+  max-width: 180px;
+  margin-bottom: 1rem;
+  border: 2px solid var(--intel-contrast);
+}
+
+section {
+  margin: 2.5rem auto;
+  max-width: 1200px;
+  padding: 0 1.5rem;
+}
+
+/* Bootstrap grid override for RTL */
+html[dir="rtl"] .row {
+  flex-direction: row-reverse;
+}
+
+/* Three-column section styling */
+.three-col-section {
+  margin-top: 3.5rem;
+}
+
+.three-col-section .card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,113,197,0.06);
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  margin-bottom: 2.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 400;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.three-col-section .card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.three-col-section .card a {
+  margin-top: 1.5rem;
+  color: var(--intel-blue);
+  text-decoration: none;
+  font-weight: 600;
+  align-self: flex-start;
+}
+
+.btn-primary {
+  background-color: var(--intel-blue);
+  border-color: var(--intel-blue-dark);
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.2s, border 0.2s;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--intel-blue-dark);
+  border-color: var(--intel-blue-dark);
+  color: #fff;
+}
+
+.navbar {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  background: var(--intel-blue) !important;
+  z-index: 1000;
+}
+
+.navbar .navbar-brand {
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.navbar .nav-link,
+.navbar .btn {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 2rem;
+  padding: 0.5rem 1.5rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.navbar .btn-light {
+  background: #fff;
+  color: var(--intel-blue);
+  border: 2px solid var(--intel-blue);
+  box-shadow: 0 2px 8px rgba(0,113,197,0.08);
+}
+
+.navbar .btn-outline-light {
+  color: #fff;
+  border: 2px solid #fff;
+  background: transparent;
+}
+
+.navbar .btn-light:hover, .navbar .btn-outline-light:hover, .navbar .btn-light:focus, .navbar .btn-outline-light:focus {
+  background: var(--intel-blue-dark);
+  color: #fff;
+  border-color: var(--intel-blue-dark);
+  outline: 2px solid var(--intel-blue-dark);
+  outline-offset: 2px;
+}
+
+/* Add spacing below navbar */
+.navbar + div {
+  margin-bottom: 0;
+}
+
+img.img-fluid.border-primary {
+  border: 3px solid var(--intel-blue) !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 2px 12px rgba(0,113,197,0.08);
+}
+
+footer {
+  font-size: 1rem;
+}
+
+footer .nav-link {
+  color: #fff !important;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+footer .nav-link:hover, footer .nav-link:focus {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Accessibility: Focus styles */
+a:focus, button:focus, input:focus {
+  outline: 2px solid var(--intel-blue-dark);
+  outline-offset: 2px;
+}
+
+@media (max-width: 991.98px) {
+  .three-col-section .card {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .three-col-section .card {
+    margin-bottom: 2rem;
+  }
+}
