@@ -14,10 +14,6 @@
 </head>
 <body>
 
-  <!-- RTL Toggle Button for demonstration -->
-  <div class="container mt-3 mb-0 d-flex justify-content-end">
-    <button id="rtl-toggle" class="btn btn-outline-secondary btn-sm" aria-pressed="false" aria-label="Toggle right-to-left layout">Enable RTL</button>
-  </div>
 
 
   <!-- Header / Hero Section -->
@@ -283,27 +279,11 @@
       });
     })();
 
-    // RTL toggle logic for demonstration
-    const rtlBtn = document.getElementById('rtl-toggle');
+
+    // RTL auto-detection logic only
     const htmlEl = document.documentElement;
     const ltrCss = document.getElementById('bootstrap-ltr');
     const rtlCss = document.getElementById('bootstrap-rtl');
-    rtlBtn.addEventListener('click', function() {
-      const isRtl = htmlEl.getAttribute('dir') === 'rtl';
-      if (!isRtl) {
-        htmlEl.setAttribute('dir', 'rtl');
-        rtlCss.removeAttribute('disabled');
-        ltrCss.setAttribute('disabled', '');
-        rtlBtn.textContent = 'Disable RTL';
-        rtlBtn.setAttribute('aria-pressed', 'true');
-      } else {
-        htmlEl.setAttribute('dir', 'ltr');
-        ltrCss.removeAttribute('disabled');
-        rtlCss.setAttribute('disabled', '');
-        rtlBtn.textContent = 'Enable RTL';
-        rtlBtn.setAttribute('aria-pressed', 'false');
-      }
-    });
 
     // AI-assisted: Detect language changes and auto-apply RTL for RTL languages
     const rtlLangs = ['ar', 'he', 'fa', 'ur', 'ps', 'dv', 'ku', 'yi', 'ug', 'sd'];
@@ -318,18 +298,10 @@
         htmlEl.setAttribute('dir', 'rtl');
         rtlCss.removeAttribute('disabled');
         ltrCss.setAttribute('disabled', '');
-        if (rtlBtn) {
-          rtlBtn.textContent = 'Disable RTL';
-          rtlBtn.setAttribute('aria-pressed', 'true');
-        }
       } else {
         htmlEl.setAttribute('dir', 'ltr');
         ltrCss.removeAttribute('disabled');
         rtlCss.setAttribute('disabled', '');
-        if (rtlBtn) {
-          rtlBtn.textContent = 'Enable RTL';
-          rtlBtn.setAttribute('aria-pressed', 'false');
-        }
       }
     }
     // Observe lang attribute changes (e.g., by Google Translate)
