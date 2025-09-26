@@ -1,0 +1,206 @@
+/* Three-column section custom styles */
+.learn-more-link {
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.learn-more-link i {
+	vertical-align: middle;
+	font-size: 1.2em;
+}
+.learn-more-link.btn-outline-primary:hover,
+.learn-more-link.btn-outline-primary:focus {
+	background: #0071c5;
+	color: #fff;
+	border-color: #0071c5;
+}
+.learn-more-link.btn-outline-success:hover,
+.learn-more-link.btn-outline-success:focus {
+	background: #198754;
+	color: #fff;
+	border-color: #198754;
+}
+.learn-more-link.btn-outline-warning:hover,
+.learn-more-link.btn-outline-warning:focus {
+	background: #ffc107;
+	color: #222;
+	border-color: #ffc107;
+}
+.row.text-center h3 i {
+	font-size: 1.6em;
+	vertical-align: middle;
+	margin-left: 0.3em;
+}
+/* Intel-branded background and header */
+body {
+	margin: 0;
+	font-family: 'Segoe UI', Arial, sans-serif;
+	background: linear-gradient(120deg, #0071c5 0%, #e6f0fa 100%);
+	color: #222;
+	min-height: 100vh;
+}
+
+.intel-header {
+	background: #000f40;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+	padding: 2rem 0 1rem 0;
+	text-align: center;
+}
+
+.header-content {
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+.intel-logo {
+	width: 120px;
+	height: auto;
+	margin-bottom: 1rem;
+}
+
+.headline {
+	color: #ffffff;
+	font-size: 2.2rem;
+	margin: 0.5rem 0 0.2rem 0;
+	letter-spacing: 1px;
+}
+
+.subheading {
+	color: #fff;
+	font-size: 1.1rem;
+	margin-bottom: 0.5rem;
+}
+
+/* Timeline Layout */
+.timeline {
+	display: flex;
+	flex-direction: row;
+	overflow-x: auto;
+	gap: 2rem;
+	padding: 2rem 1rem 1rem 1rem;
+	scroll-snap-type: x mandatory;
+}
+
+.timeline-card {
+	background: #fff;
+	border-radius: 1.2rem;
+	box-shadow: 0 2px 12px rgba(0,113,197,0.10);
+	min-width: 300px;
+	max-width: 320px;
+	flex: 0 0 300px;
+	padding: 1.2rem 1rem 1.5rem 1rem;
+	position: relative;
+	transition: transform 0.3s, box-shadow 0.3s;
+	scroll-snap-align: start;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.timeline-card:hover {
+	transform: translateY(-10px) scale(1.04) rotate(-1deg);
+	box-shadow: 0 8px 32px rgba(0,113,197,0.18);
+	z-index: 2;
+}
+
+.card-img {
+	width: 100%;
+	max-width: 220px;
+	height: 120px;
+	object-fit: cover;
+	border-radius: 0.7rem;
+	margin-bottom: 1rem;
+	box-shadow: 0 2px 8px rgba(0,113,197,0.10);
+}
+
+.timeline-card h2 {
+	color: #0071c5;
+	margin: 0.2rem 0 0.1rem 0;
+	font-size: 1.3rem;
+}
+
+.timeline-card h3 {
+	color: #222;
+	margin: 0 0 0.5rem 0;
+	font-size: 1.1rem;
+}
+
+.timeline-card p {
+	color: #444;
+	font-size: 1rem;
+	margin: 0 0 0.5rem 0;
+	text-align: center;
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: opacity 0.4s ease, max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
+	padding: 0 0.7rem;
+}
+
+.timeline-card:hover p {
+	opacity: 1;
+	max-height: 200px;
+	padding: 0.5rem 0.7rem;
+}
+
+/* Card details hidden by default, show on hover */
+.card-details {
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: opacity 0.4s ease, max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
+	background: #e6f0fa;
+	border-radius: 0.7rem;
+	margin-top: 0.5rem;
+	padding: 0 0.7rem;
+	font-size: 0.97rem;
+	color: #0071c5;
+	box-shadow: 0 1px 4px rgba(0,113,197,0.07);
+}
+
+.timeline-card:hover .card-details {
+	opacity: 1;
+	max-height: 100px;
+	padding: 0.5rem 0.7rem;
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 700px) {
+	.timeline {
+		flex-direction: column;
+		overflow-x: visible;
+		gap: 1.5rem;
+		scroll-snap-type: none;
+	}
+	.timeline-card {
+		min-width: 0;
+		max-width: 100%;
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+/* Scrollbar styling for timeline */
+.timeline {
+	scrollbar-width: thin;
+	scrollbar-color: #0071c5 #e6f0fa;
+}
+.timeline::-webkit-scrollbar {
+	height: 10px;
+}
+.timeline::-webkit-scrollbar-thumb {
+	background: #0071c5;
+	border-radius: 5px;
+}
+.timeline::-webkit-scrollbar-track {
+	background: #e6f0fa;
+	border-radius: 5px;
+}
+
+/* Instruction text */
+p:last-of-type {
+	text-align: center;
+	color: #0071c5;
+	font-size: 1rem;
+	margin: 1.5rem 0 1rem 0;
+}

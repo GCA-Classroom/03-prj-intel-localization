@@ -4,21 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <!-- Bootstrap LTR (default) -->
+  <link id="bootstrap-ltr" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Bootstrap RTL (disabled by default) -->
+  <link id="bootstrap-rtl" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css" rel="stylesheet" disabled>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Header / Hero Section -->
-  <header>
-    <div>
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" />
-      <!-- Main Heading -->
-      <h1>
-        Sustainability Through the Ages
-      </h1>
 
-      <!-- Subheading / Description -->
-      <p>
+
+  <!-- Header / Hero Section -->
+  <header class="intel-header">
+    <div class="header-content">
+      <img class="intel-logo" src="img/intel-header-logo.svg" alt="Intel Logo" />
+      <h1 class="headline">Sustainability Through the Ages</h1>
+      <p class="subheading">
         Explore Intel's journey through time, discovering how our commitment
         to innovation has shaped a more sustainable future for technology 
         and our planet.
@@ -26,166 +29,292 @@
     </div>
   </header>
 
+  <!-- Three-Column Responsive Section -->
+  <section class="container my-5">
+    <div class="row text-center g-4">
+      <div class="col-12 col-md-4">
+        <div class="p-4 h-100 border rounded-3 bg-white shadow-sm">
+          <h3 class="mb-3">
+            Innovation <i class="bi bi-lightbulb-fill text-primary"></i>
+          </h3>
+          <p>Driving breakthrough technologies that shape a smarter, more sustainable world.</p>
+          <a href="#" class="learn-more-link btn btn-outline-primary mt-2">
+            Learn More <i class="bi bi-arrow-right-circle"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="p-4 h-100 border rounded-3 bg-white shadow-sm">
+          <h3 class="mb-3">
+            Responsibility <i class="bi bi-globe2 text-success"></i>
+          </h3>
+          <p>Championing ethical practices and environmental stewardship at every step.</p>
+          <a href="#" class="learn-more-link btn btn-outline-success mt-2">
+            Learn More <i class="bi bi-arrow-right-circle"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="p-4 h-100 border rounded-3 bg-white shadow-sm">
+          <h3 class="mb-3">
+            Collaboration <i class="bi bi-people-fill text-warning"></i>
+          </h3>
+          <p>Partnering globally to accelerate progress toward a sustainable future.</p>
+          <a href="#" class="learn-more-link btn btn-outline-warning mt-2">
+            Learn More <i class="bi bi-arrow-right-circle"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscription Form Section -->
+  <section class="container my-5" aria-labelledby="newsletter-heading">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-md-9">
+        <div class="p-4 border rounded-3 bg-white shadow-sm">
+          <h2 id="newsletter-heading" class="mb-3">Subscribe to Our Sustainability Newsletter</h2>
+          <form class="needs-validation" id="newsletter-form" novalidate aria-label="Sustainability Newsletter Subscription Form">
+            <div class="mb-3">
+              <label for="subscriberEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="subscriberEmail" name="email" placeholder="name@example.com" required aria-required="true" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscription Success Modal -->
+  <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="subscribeModalLabel">Thank You for Subscribing!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          You have successfully subscribed to Intel’s sustainability newsletter. Stay tuned for updates!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Timeline Cards Section -->
-  <section>
+  <section class="timeline">
     <!-- Card 1: 1968 -->
-    <div>
+    <div class="timeline-card">
+      <img class="card-img" src="img/1.jpg" alt="Artistic rendering of Intel's founding in 1968, showing two engineers and early microchip designs." />
       <h2>1968</h2>
       <h3>Intel Founded</h3>
-      <img src="img/1.jpg" alt="Placeholder Image" />
       <p>
         Robert Noyce and Gordon Moore rename the newly formed company 
         NM Electronics to Intel Corporation, laying the foundation for 
         decades of technological innovation.
       </p>
+      <div class="card-details">
+        <p>Founders: Robert Noyce, Gordon Moore<br>Original name: NM Electronics</p>
+      </div>
     </div>
-
     <!-- Card 2: 1971 -->
-    <div>
+    <div class="timeline-card">
+      <img class="card-img" src="img/2.jpg" alt="Illustration of the Intel 4004, the world's first commercial microprocessor, with a close-up of the chip." />
       <h2>1971</h2>
       <h3>First Microprocessor</h3>
-      <img src="img/2.jpg" alt="Placeholder Image" />
       <p>
         Intel debuts the 4004, the world's first commercial microprocessor, 
         igniting the microprocessor revolution and propelling the future 
         of computing devices.
       </p>
+      <div class="card-details">
+        <p>Product: Intel 4004<br>Transistors: 2,300</p>
+      </div>
     </div>
-
     <!-- Card 3: 1978 -->
-    <div>
+    <div class="timeline-card">
+      <img class="card-img" src="img/3.jpg" alt="Visual of the Intel 8086 processor, highlighting the x86 architecture and its impact on modern PCs." />
       <h2>1978</h2>
       <h3>8086 Processor</h3>
-      <img src="img/3.jpg" alt="Placeholder Image" />
       <p>
         Launch of the 8086 processor, establishing the x86 architecture 
         that drives countless PCs and servers in the modern era.
       </p>
+      <div class="card-details">
+        <p>Architecture: x86<br>Legacy: Foundation for modern PCs</p>
+      </div>
     </div>
-
     <!-- Card 4: 1985 -->
-    <div>
+    <div class="timeline-card">
+      <img class="card-img" src="img/4.jpg" alt="Depiction of the Intel 386 processor, emphasizing 32-bit architecture and multitasking capabilities." />
       <h2>1985</h2>
       <h3>386 Processor</h3>
-      <img src="img/4.jpg" alt="Placeholder Image" />
       <p>
         Intel introduces the 386 processor with 32-bit architecture, 
         ushering in a new era of performance and multitasking for 
         personal computers.
       </p>
+      <div class="card-details">
+        <p>Bit-width: 32-bit<br>Key Feature: Multitasking</p>
+      </div>
     </div>
-
     <!-- Card 5: 2006 -->
-    <div>
+    <div class="timeline-card">
+      <img class="card-img" src="img/5.jpg" alt="Graphical representation of Intel's peak greenhouse gas emissions in 2006, with icons for renewable energy and abatement." />
       <h2>2006</h2>
       <h3>Peak GHG Emissions</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
       <p>
         This year marks Intel's highest annual greenhouse gas emissions 
         for operations. Over subsequent years, Intel invests heavily in 
         chemical abatement, renewable energy, and energy-efficient 
         manufacturing to reverse this trend.
       </p>
+      <div class="card-details">
+        <p>Focus: Emissions reduction<br>Actions: Renewable energy, abatement</p>
+      </div>
     </div>
-
     <!-- Card 6: 2020 -->
-    <div>
+    <div class="timeline-card">
+      <img class="card-img" src="img/6.jpg" alt="Symbolic image for Intel's RISE strategy, showing icons for responsibility, inclusion, sustainability, and enabling." />
       <h2>2020</h2>
       <h3>RISE Strategy</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
       <p>
         Intel launches its RISE (Responsible, Inclusive, Sustainable, 
         Enabling) strategy and 2030 goals, aiming to drive industry-wide 
         progress on climate action, water stewardship, and waste reduction.
       </p>
+      <div class="card-details">
+        <p>RISE: Responsible, Inclusive, Sustainable, Enabling<br>Goal: 2030</p>
+      </div>
     </div>
-
     <!-- Card 7: 2022 -->
-    <div>
+    <div class="timeline-card">
+      <img class="card-img" src="img/7.jpg" alt="Infographic of Intel's net-zero by 2040 goal, with a globe and emission reduction symbols." />
       <h2>2022</h2>
       <h3>Net-Zero By 2040</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
       <p>
         Intel announces its commitment to achieve net-zero greenhouse 
         gas emissions (Scope 1 and 2) across its global operations 
         by 2040, building on years of environmental initiatives.
       </p>
+      <div class="card-details">
+        <p>Target: Net-zero by 2040<br>Scope: Global operations</p>
+      </div>
     </div>
-
     <!-- Card 8: 2023 -->
-    <div>
+    <div class="timeline-card">
+      <img class="card-img" src="img/8.jpg" alt="Visual showing Intel's achievement of 99% renewable electricity, with solar panels and wind turbines." />
       <h2>2023</h2>
       <h3>Renewable Electricity</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
       <p>
         The company achieves 99% renewable electricity usage worldwide, 
         helping to drastically lower carbon emissions and driving progress 
         toward Intel's long-term sustainability goals.
       </p>
+      <div class="card-details">
+        <p>Electricity: 99% renewable<br>Impact: Lower carbon emissions</p>
+      </div>
     </div>
-
     <!-- Card 9: 2024 -->
-    <div>
+    <div class="timeline-card">
+      <img class="card-img" src="img/9.jpg" alt="Scene from Intel's first Sustainability Summit, with diverse leaders collaborating on semiconductor sustainability." />
       <h2>2024</h2>
       <h3>Sustainability Summit</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
       <p>
         Intel hosts its first Sustainability Summit, uniting suppliers, 
         government officials, and industry leaders to collaborate on 
         next-generation sustainable semiconductor manufacturing.
       </p>
+      <div class="card-details">
+        <p>Event: First Sustainability Summit<br>Focus: Collaboration for sustainability</p>
+      </div>
     </div>
   </section>
+  <p>Scroll to view timeline | Hover over cards to learn more!</p>
 
-  <!-- 3-Column Content Section -->
-  <section>
-    <div>
-      
-      <!-- Column 1 -->
-      <div>
-        <h2>RISE Strategy</h2>
-        <p>
-          Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, 
-          Intel sets ambitious 2030 goals, including driving industry-wide 
-          progress on climate action, water stewardship, and waste reduction.
-        </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-2 mb-md-0">
+        &copy; 2025 Intel Corporation. All rights reserved.
       </div>
-
-      <!-- Column 2 -->
-      <div>
-        <h2>Commitment</h2>
-        <p>
-          In 2022, Intel pledged to achieve net-zero greenhouse gas emissions 
-          (Scope 1 and 2) by 2040. This commitment builds on decades of 
-          environmental initiatives and partnerships across the semiconductor 
-          industry.
-        </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
-      </div>
-
-      <!-- Column 3 -->
-      <div>
-        <h2>Water &amp; Waste</h2>
-        <p>
-          Intel conserves billions of gallons of water annually and 
-          collaborates with local communities to restore watersheds.
-          Intel also upcycles and recycles materials to reduce waste and 
-          advance a circular economy.
-        </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
-      </div>
-
+      <nav aria-label="Footer navigation">
+        <a href="#" class="text-light me-3">Privacy Policy</a>
+        <a href="#" class="text-light me-3">Terms of Use</a>
+        <a href="#" class="text-light">Contact</a>
+      </nav>
     </div>
-  </section>
+  </footer>
 
-  <!-- Subscription Form -->
-  <section>
-    <h2>Subscribe to our Newsletter</h2>
-    <!-- Add form here -->
-  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script>
+    // Bootstrap form validation and modal trigger for newsletter
+    (() => {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          } else {
+            // Show modal on successful validation for newsletter form
+            if (form.id === 'newsletter-form') {
+              event.preventDefault();
+              const modal = new bootstrap.Modal(document.getElementById('subscribeModal'));
+              modal.show();
+              form.reset();
+              form.classList.remove('was-validated');
+            }
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+
+
+    // RTL auto-detection logic only
+    const htmlEl = document.documentElement;
+    const ltrCss = document.getElementById('bootstrap-ltr');
+    const rtlCss = document.getElementById('bootstrap-rtl');
+
+    // AI-assisted: Detect language changes and auto-apply RTL for RTL languages
+    const rtlLangs = ['ar', 'he', 'fa', 'ur', 'ps', 'dv', 'ku', 'yi', 'ug', 'sd'];
+    function isRtlLang(lang) {
+      if (!lang) return false;
+      lang = lang.toLowerCase();
+      // Check for exact match or language code prefix
+      return rtlLangs.some(rtl => lang === rtl || lang.startsWith(rtl + '-'));
+    }
+    function updateRtlByLang(lang) {
+      if (isRtlLang(lang)) {
+        htmlEl.setAttribute('dir', 'rtl');
+        rtlCss.removeAttribute('disabled');
+        ltrCss.setAttribute('disabled', '');
+      } else {
+        htmlEl.setAttribute('dir', 'ltr');
+        ltrCss.removeAttribute('disabled');
+        rtlCss.setAttribute('disabled', '');
+      }
+    }
+    // Observe lang attribute changes (e.g., by Google Translate)
+    const langObserver = new MutationObserver(mutations => {
+      mutations.forEach(m => {
+        if (m.attributeName === 'lang') {
+          updateRtlByLang(htmlEl.getAttribute('lang'));
+        }
+      });
+    });
+    langObserver.observe(htmlEl, { attributes: true });
+    // Initial check
+    updateRtlByLang(htmlEl.getAttribute('lang'));
+  </script>
 </body>
 </html>
